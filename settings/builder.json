@@ -1,0 +1,13 @@
+{
+  "excludeScenes": [],
+  "orientation": {
+    "landscapeLeft": false,
+    "landscapeRight": false,
+    "portrait": true,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.blastgame",
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "title": "blast_game",
+  "webOrientation": "portrait"
+}

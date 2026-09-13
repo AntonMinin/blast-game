@@ -1,0 +1,11 @@
+{
+  "name": "blast-game",
+  "private": true,
+  "scripts": {
+    "typecheck": "node tools/check-code.js",
+    "test": "tsc tests/game-logic.test.ts --strict --module commonjs --target es2015 --lib es2015,dom --outDir temp/tests && node temp/tests/tests/game-logic.test.js"
+  },
+  "devDependencies": {
+    "typescript": "4.9.5"
+  }
+}

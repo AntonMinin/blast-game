@@ -1,0 +1,6 @@
+{
+  "name": "typecheck",
+  "version": "1.0.0",
+  "description": "Проверка TypeScript: блокирует превью и сборку, пока в проекте есть ошибки",
+  "main": "main.js"
+}
