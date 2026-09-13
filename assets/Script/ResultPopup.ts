@@ -1,3 +1,4 @@
+import { animateScoreLabel, formatScore } from "./animateScoreLabel";
 import { GameResult } from "./GameSession";
 import { requireProperty } from "./requireProperty";
 
@@ -113,19 +114,8 @@ export default class ResultPopup extends cc.Component {
     }
 
     private playScoreCount(scoreValue: cc.Label, score: number, targetScore: number): void {
-        scoreValue.string = `0/${targetScore}`;
-
-        cc.tween({ value: 0 })
-            .delay(SCORE_COUNT_DELAY)
-            .to(SCORE_COUNT_DURATION, { value: score }, {
-                easing: "quadOut",
-                progress: (start: number, end: number, current: number, ratio: number) => {
-                    const value = start + (end - start) * ratio;
-                    scoreValue.string = `${Math.round(value)}/${targetScore}`;
-                    return value;
-                },
-            })
-            .start();
+        scoreValue.string = formatScore(0, targetScore);
+        animateScoreLabel(scoreValue, { value: 0 }, score, targetScore, SCORE_COUNT_DURATION, SCORE_COUNT_DELAY);
     }
 
     private playButtonPulse(button: cc.Node): void {
